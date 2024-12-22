@@ -177,15 +177,6 @@ DownloadHistory.belongsTo(User, { foreignKey: "user_id" });
 Development.belongsTo(Category, { foreignKey: "category_id" });
 Category.hasMany(Development, { foreignKey: "category_id" });
 
-Development.belongsToMany(Tag, {
-  through: "DevelopmentTags",
-  foreignKey: "development_id",
-});
-Tag.belongsToMany(Development, {
-  through: "DevelopmentTags",
-  foreignKey: "tag_id",
-});
-
 User.hasOne(Profile, { foreignKey: "user_id" });
 Profile.belongsTo(User, { foreignKey: "user_id" });
 
